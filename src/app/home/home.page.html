@@ -1,0 +1,19 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>Bienvenido, {{ usuario }}!</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content class="ion-padding">
+  <h2>Materias Inscritas:</h2>
+  <ion-list>
+    <ion-item *ngFor="let materia of (materias$ | async)">
+      {{ materia.nombre }} - {{ materia.hora }}
+    </ion-item>
+    
+  </ion-list>
+  
+  <ion-button expand="full" (click)="escanearQR()">
+    Escanear Código QR
+  </ion-button>
+</ion-content>
