@@ -35,3 +35,8 @@
 /* @import "@ionic/angular/css/palettes/dark.always.css"; */
 /* @import "@ionic/angular/css/palettes/dark.class.css"; */
 @import "@ionic/angular/css/palettes/dark.system.css";
+
+/* Regla para establecer el fondo celeste claro en toda la aplicación */
+:root {
+  --ion-color-background: #A1D6E2; // Celeste claro
+}

@@ -1,27 +1,45 @@
-#container {
-  text-align: center;
-
-  position: absolute;
-  left: 0;
-  right: 0;
-  top: 50%;
-  transform: translateY(-50%);
+ion-header {
+  background-color: #f0f8ff; /* Celeste claro */
+  ion-toolbar {
+    --background: #f0f8ff; /* Celeste claro */
+    --color: black; /* Texto negro */
+  }
 }
 
-#container strong {
-  font-size: 20px;
-  line-height: 26px;
-}
+ion-content {
+  background-color: #f0f8ff; /* Celeste claro */
+  display: flex; /* Usar flexbox */
+  flex-direction: column; /* Colocar elementos en columna */
+  align-items: center; /* Centrar horizontalmente */
+  justify-content: center; /* Centrar verticalmente */
+  padding: 16px;
 
-#container p {
-  font-size: 16px;
-  line-height: 22px;
+  h2 {
+    margin: 16px 0;
+    color: black; /* Texto negro */
+    text-align: center; /* Centrar el texto */
+  }
 
-  color: #8c8c8c;
+  ion-list {
+    margin-bottom: 16px;
+    width: 100%; /* Hacer que la lista use el ancho completo */
 
-  margin: 0;
-}
+    ion-item {
+      background-color: white; /* Fondo blanco para los elementos de la lista */
+      color: black; /* Texto negro */
+      border-radius: 8px; /* Bordes redondeados */
+      margin: 4px 0; /* Margen entre elementos */
+      box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Sombra suave */
+    }
+  }
 
-#container a {
-  text-decoration: none;
+  ion-button {
+    margin-top: 16px;
+    background-color: #4ca1af; /* Color del botón */
+    color: white; /* Texto blanco en el botón */
+    border: none; /* Sin borde */
+    border-radius: 8px; /* Bordes redondeados */
+    font-weight: bold; /* Texto en negrita */
+    width: 100%; /* Hacer que el botón use el ancho completo */
+  }
 }

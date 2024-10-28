@@ -1,8 +1,7 @@
-import { Component,ElementRef, OnInit,ViewChild } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { Router, NavigationExtras } from '@angular/router';
 import { ToastController } from '@ionic/angular';
 import { DbService } from 'src/app/services/db.service';
-import { Login } from 'src/app/models/login';
 
 @Component({
   selector: 'app-login',
@@ -12,44 +11,43 @@ import { Login } from 'src/app/models/login';
 export class LoginPage implements OnInit {
 
   username!: string;
-  password!: String;
-  mensaje : string;
+  password!: string;
+  mensaje: string;
 
   constructor(
-    private toastController : ToastController,
-    private router : Router,
+    private toastController: ToastController,
+    private router: Router,
     private dbService: DbService,
   ) { 
-    this.mensaje = "Bienvenido"
+    this.mensaje = "Bienvenido";
   }
 
-  ngOnInit() {
-  }
+  ngOnInit() { }
 
   validarCredenciales() {
-    console.log("Ejecutando validacion ...")
+    console.log("Ejecutando validacion ...");
     
     const login = this.dbService.findByUsername(this.username);
 
-    if(login === undefined){
+    if (login === undefined) {
       this.generateMessage('Usuario no existe', 'danger');
       return;
     }
 
-    if (
-      this.username === login.username &&
-      this.password === login.password
-    ) {
+    if (this.username === login.username && this.password === login.password) {
       this.generateMessage('Login correcto', 'success');
       let extras: NavigationExtras = {
-        state: { user: this.username }
-      }
+        state: { user: this.username } // Aquí se pasa el nombre de usuario a la siguiente página
+      };
+      console.log('Navegando a home con usuario:', this.username); // Log de depuración
       this.router.navigate(['/home'], extras);
     } else {
       this.generateMessage('Login fallido', 'danger');
     }
   }
-  async generateMessage(message: string, color: string){
+  
+
+  async generateMessage(message: string, color: string) {
     const toast = await this.toastController.create({
       message: message,
       duration: 3000,
@@ -59,4 +57,5 @@ export class LoginPage implements OnInit {
     await toast.present();
   }
 }
+
 

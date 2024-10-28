@@ -1,0 +1,96 @@
+// Variables para tonalidades
+$celeste-claro: #A1D6E2;  // Celeste claro para el fondo
+$blanco: #FFFFFF;         // Blanco para los contenedores
+$negro: #000000;          // Negro para las letras
+$boton-celeste: #80deea;  // Celeste pastel para el botón
+$boton-celeste-hover: #4dd0e1;  // Celeste oscuro para hover del botón
+$verde-oscuro: #00796b;   // Verde oscuro para texto "Bienvenido"
+
+// Importar la fuente
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap');
+
+// Estilos generales para la página de login
+:host {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  background-color: $celeste-claro; // Fondo celeste claro
+
+  .login-container {
+    background-color: $blanco; // Fondo blanco para el contenedor de login
+    border-radius: 10px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+    padding: 20px;
+    width: 90%;
+    max-width: 400px;
+
+    h1 {
+      font-family: 'Poppins', sans-serif; // Aplicar la tipografía Poppins
+      font-weight: 600; // Peso de la fuente
+      color: $verde-oscuro; // Color verde oscuro para el título de "Bienvenido"
+      text-align: center;
+      margin-bottom: 20px;
+    }
+
+    h2 {
+      font-family: 'Poppins', sans-serif; // Aplicar la tipografía Poppins
+      font-weight: 400; // Peso de la fuente
+      color: $negro; // Color negro para el subtítulo
+      text-align: center;
+      margin-bottom: 20px;
+    }
+
+    .input-field {
+      margin-bottom: 15px;
+
+      ion-input {
+        background-color: $blanco; // Fondo blanco para input
+        border-radius: 5px;
+        padding: 10px;
+        color: $negro; // Color negro para el texto
+
+        // Asegúrate de que el texto del input sea negro
+        input {
+          color: $negro; // Color negro para el texto del input
+        }
+      }
+
+      ion-label {
+        font-family: 'Poppins', sans-serif; // Aplicar la tipografía Poppins
+        color: $negro; // Color negro para la etiqueta
+      }
+    }
+
+    .login-button {
+      background-color: $boton-celeste; // Fondo celeste pastel para el botón
+      color: $blanco; // Texto blanco
+      border-radius: 5px;
+      padding: 10px;
+      text-align: center;
+      cursor: pointer; // Cambiar cursor a pointer para el botón
+      border: none; // Quitar borde
+
+      // Variables de CSS de Ionic para asegurar la eliminación del borde
+      --box-shadow: none; // Eliminar sombra
+      --border-width: 0; // Quitar ancho del borde
+      --border-style: none; // Quitar estilo del borde
+
+      &:hover {
+        background-color: $boton-celeste-hover; // Efecto hover con color más oscuro
+      }
+    }
+
+    .registro-link {
+      display: block; // Para que ocupe el ancho completo
+      text-align: center; // Centrar texto
+      margin-top: 15px; // Espacio superior
+      color: $negro; // Color negro para el enlace
+      text-decoration: underline; // Subrayar el texto
+
+      &:hover {
+        color: darken($negro, 10%); // Cambiar color al pasar el mouse
+      }
+    }
+  }
+}

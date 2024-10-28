@@ -1,0 +1,51 @@
+// Fondo celeste claro para toda la página
+ion-content {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #e0f7fa; // Celeste claro pastel
+    padding: 20px;
+  }
+  
+  // Centrar el formulario y darle estilo
+  form {
+    width: 100%;
+    max-width: 400px;
+    background-color: #ffffff; // Fondo blanco para los inputs
+    padding: 20px;
+    border-radius: 12px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); // Sombra sutil para el formulario
+    text-align: center;
+  }
+  
+  // Estilo para los elementos del formulario
+  ion-item {
+    --background: #ffffff; // Fondo blanco
+    --border-radius: 8px;
+    margin-bottom: 15px;
+  }
+  
+  ion-label {
+    color: #000000; // Texto en negro
+    font-size: 14px;
+  }
+  
+  // Estilo para el botón de registro
+  ion-button {
+    --background: #80deea; // Celeste pastel para el botón
+    --background-activated: #4dd0e1; // Un tono ligeramente más oscuro al hacer clic
+    color: #000000; // Texto negro
+    margin-top: 20px;
+    border-radius: 8px;
+    font-size: 16px;
+  }
+  
+  // Centrar título y contenido en la página
+  ion-title {
+    text-align: center;
+    color: #00796b; // Verde oscuro pastel para el título
+    font-size: 24px;
+    font-weight: bold;
+    margin-bottom: 20px;
+  }
+  

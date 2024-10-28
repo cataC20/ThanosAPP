@@ -1,27 +1,22 @@
-<ion-header [translucent]="true">
-  <ion-toolbar>
-    <ion-title>Thanos-APP</ion-title>
-  </ion-toolbar>
-</ion-header>
+<ion-content>
+  <div class="login-container">
+    <h1>Bienvenido</h1>
+    <h2>Inicia sesión</h2>
 
-<ion-content >
-  <h1>Bienvenido </h1>
+    <ion-item class="ion-padding input-field">
+      <ion-input [(ngModel)]="username" labelPlacement="floating">
+        <div slot="label">Usuario</div>
+      </ion-input>
+    </ion-item>
 
-  <h2>Inicia session</h2>
+    <ion-item class="ion-padding input-field">
+      <ion-input [(ngModel)]="password" type="password" labelPlacement="floating">
+        <div slot="label">Contraseña</div>
+      </ion-input>
+    </ion-item>
 
-  <ion-item class="ion-padding">
-    <ion-input [(ngModel)]= "username" labelPlacement="floating">
-      <div slot="label">Usuario</div>
-    </ion-input>
-  </ion-item>
+    <ion-button (click)="validarCredenciales()" class="ion-padding login-button" expand="block">Ingresar</ion-button>
 
-  <ion-item class="ion-padding">
-    <ion-input [(ngModel)]= "password" type = "password" labelPlacement="floating">
-      <div slot="label">Contraseña </div>
-    </ion-input>
-  </ion-item>
-
-  <ion-button (click)="validarCredenciales()" class="ion-padding" expand="block">Ingresar</ion-button>
-
-  <a routerLink="/registro">Registrate Aqui</a>
+    <a routerLink="/registro" class="registro-link">Regístrate Aquí</a>
+  </div>
 </ion-content>
